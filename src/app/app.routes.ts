@@ -8,7 +8,10 @@ export const routes: Routes = [
     path:'Home',component:TaskComponent
   },
   {
-    path:'subtask/:id',component:SubtaskComponent
+    path:'subtask/:id',component:SubtaskComponent,
+    data:{
+      renderMode:'no-prerender'
+    }
   },
   {
     path:'',redirectTo:'Home',pathMatch:'full'
