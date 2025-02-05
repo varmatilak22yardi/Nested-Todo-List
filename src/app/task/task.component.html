@@ -1,0 +1,14 @@
+<div class="'task-container">
+  <h2>Main Tasks</h2>
+  <div class="add-task">
+    <input [(ngModel)]="newTaskTitle" placeholder="Add New Task" />
+    <button (click)="addTask()">Add Task</button>
+  </div>
+  <div class="task" *ngFor="let task of tasks">
+    <h3>
+      <input [(ngModel)]="task.title" (change)="updateTask(task)"/>
+      <a [routerLink]="['/subtask',task.id]">View Subtasks</a>
+    </h3>
+
+  </div>
+</div>

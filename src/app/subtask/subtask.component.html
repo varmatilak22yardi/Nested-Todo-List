@@ -1,0 +1,20 @@
+<div class="subtask-container" *ngIf="task">
+  <h2>Task:{{task.title}}</h2>
+  <div class="add-subtask">
+    <input [(ngModel)]="newSubtaskTitle" placeholder="Add Subtask" />
+    <button (click)="addSubtask()">Add Subtask</button>
+  </div>
+  <ul>
+    <li *ngFor="let subtask of task.subtasks">
+      <input type="checkbox" [(ngModel)]="subtask.completed" (change)="updateTask()"/>
+      <input [(ngModel)]="subtask.title" (change)="updateTask()"/>
+      <button (click)="removeSubtask(subtask.id)">Remove</button>
+    </li>
+  </ul>
+  <button class="back-btn"(click)="goHome()">Back to Tasks</button>
+</div>
+
+<div *ngIf="!task">
+  <p>Task Not found</p>
+  <button class="back-btn"(click)="goHome()">Back to Home</button>
+</div>
