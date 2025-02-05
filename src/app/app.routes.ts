@@ -6,13 +6,16 @@ export const routes: Routes = [
   {
     path:'Home',component:TaskComponent,
     data:{
-      RenderMode:'no-prerender'
+      RenderMode:'no-prerender',
+      getPrerenderParams:()=>[]
     }
   },
   {
     path:'subtask/:id',component:SubtaskComponent,
     data:{
-      RenderMode:'no-prerender'}
+      RenderMode:'no-prerender',
+      getPrerenderParams:()=>[]
+    }
   },
   {
     path:'',redirectTo:'Home',pathMatch:'full'
