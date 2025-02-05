@@ -12,7 +12,10 @@ export const routes: Routes = [
   {
     path:'subtask/:id',component:SubtaskComponent,
     data:{
-      getPrerenderParams:()=>[]}
+      getPrerenderParams:()=>[
+        {
+          id:'0'
+        }]}
   },
   {
     path:'',redirectTo:'Home',pathMatch:'full'
