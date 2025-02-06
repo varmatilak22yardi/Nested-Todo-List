@@ -8,9 +8,6 @@ export const routes: Routes = [
   },
   {
     path:'subtask/:id',component:SubtaskComponent,
-    data:{
-      prerender:false,
-    }
   },
   {
     path:'',redirectTo:'Home',pathMatch:'full'
@@ -20,6 +17,3 @@ export const routes: Routes = [
   }
 ];
 
-export function getPrerenderParams():Array<{id:string}>{
-  return [];
-}

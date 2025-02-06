@@ -26,6 +26,10 @@ app.use(
     redirect: false,
   }),
 );
+app.use('/subtask/:id', (req, res, next) => {
+  // Skip prerendering for dynamic routes and pass the request to SSR
+  next();
+});
 
 /**
  * Handle all other requests by rendering the Angular application.
