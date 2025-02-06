@@ -5,16 +5,11 @@ import { SubtaskComponent } from './subtask/subtask.component';
 export const routes: Routes = [
   {
     path:'Home',component:TaskComponent,
-    data:{
-      renderMode:'no-prerender',
-      getPrerenderParams:()=>[]
-    }
   },
   {
     path:'subtask/:id',component:SubtaskComponent,
     data:{
-      renderMode:'no-prerender',
-      getPrerenderParams:()=>[]
+      prerender:false,
     }
   },
   {
@@ -24,3 +19,7 @@ export const routes: Routes = [
     path:'**',redirectTo:'Home'
   }
 ];
+
+export function getPrerenderParams():Array<{id:string}>{
+  return [];
+}
