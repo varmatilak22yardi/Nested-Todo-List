@@ -4,7 +4,7 @@ import { SubtaskComponent } from './subtask/subtask.component';
 
 export const routes: Routes = [
   {
-    path:'Home',component:TaskComponent,
+    path:'',component:TaskComponent,
   },
   {
     path:'subtask/:id',component:SubtaskComponent,

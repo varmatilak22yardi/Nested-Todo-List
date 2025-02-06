@@ -50,6 +50,6 @@ export class SubtaskComponent implements OnInit{
     }
   }
   goHome():void{
-    this.router.navigate(['/Home']);
+    this.router.navigate(['/']);
   }
 }
