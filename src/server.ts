@@ -12,9 +12,7 @@ const serverDistFolder = dirname(fileURLToPath(import.meta.url));
 const browserDistFolder = resolve(serverDistFolder, '../browser');
 
 const app = express();
-
-// Instantiate AngularNodeAppEngine without any arguments
-const angularApp = new AngularNodeAppEngine();
+const angularApp = new AngularNodeAppEngine(); // ✅ Remove arguments
 
 /**
  * Serve static files from /browser
@@ -26,13 +24,9 @@ app.use(
     redirect: false,
   }),
 );
-app.use('/subtask/:id', (req, res, next) => {
-  // Skip prerendering for dynamic routes and pass the request to SSR
-  next();
-});
 
 /**
- * Handle all other requests by rendering the Angular application.
+ * Handle all other requests using the Angular application.
  */
 app.use('/**', (req, res, next) => {
   angularApp
@@ -45,7 +39,6 @@ app.use('/**', (req, res, next) => {
 
 /**
  * Start the server if this module is the main entry point.
- * The server listens on the port defined by the `PORT` environment variable, or defaults to 4000.
  */
 if (isMainModule(import.meta.url)) {
   const port = process.env['PORT'] || 4000;
