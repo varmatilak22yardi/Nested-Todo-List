@@ -4,16 +4,12 @@ import { SubtaskComponent } from './subtask/subtask.component';
 
 export const routes: Routes = [
   {
-    path:'',component:TaskComponent,
+    path: '', component: TaskComponent, // default route
   },
   {
-    path:'subtask/:id',component:SubtaskComponent,
+    path: 'subtask/:id', component: SubtaskComponent, // dynamic route
   },
   {
-    path:'',redirectTo:'Home',pathMatch:'full'
-  },
-  {
-    path:'**',redirectTo:'Home'
+    path: '**', redirectTo: '', // wildcard route
   }
 ];
-
