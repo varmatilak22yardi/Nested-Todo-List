@@ -10,7 +10,7 @@ export const serverRoutes: ServerRoute[] = [
     renderMode:RenderMode.Server
   },
   {
-    path:"/subtask/:id",
+    path:"subtask/:id",
     renderMode:RenderMode.Server
   }
 ];
